@@ -2,13 +2,13 @@
 class Matikka{
  
         public function calcKilokalorit($num) {
-            $vak = 4184;
+            $vak = 4.184;
             $result = $vak/$num;
             return $num. ' Joule is equal to ' . $result . ' Kcal ' . '<br>';
           }
 
         public function calcJouleiksi($num) {
-            $vak = 4184;
+            $vak = 4.184;
             $result = $vak * $num;
             return  $num . ' Kilokalorit is equal to ' . $result . ' J ' . '<br>';
           }
