@@ -1,3 +1,30 @@
+<?php 
+
+
+include('../Matikka.php');
+$calculation = new Matikka();
+
+$kalori= "";
+$nameError = "";
+
+if(isset($_POST['laske'])){
+ 
+   if(empty($_POST["kalori"])){
+       $nameError = "This field is required";
+   }
+   else {
+       $kalori = $_POST["kalori"]; 
+       
+   }
+   
+  
+}
+ 
+?>
+
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -23,14 +50,20 @@
     </div>
     </section>
     <!--initialting out class method -->
-
+  
 
     <div class="container">
-    <form action="calc.php" method="post">
+    <form action="index.php" method="post">
       <label for="input">Calculate your Calories </label>
      
       <input type="text" name = "kalori" id="inputlg">
-   
+      <span class="alert-danger"><?php echo $nameError;?></span>
+      <div class="alert-danger"><?php  if(!$nameError){
+        echo$calculation->calcJouleiksi($kalori);
+       }  ?>
+      </div>
+      
+     
       <button type="submit" value="laske" name = "laske" class="btn btn-primary">Laske</button>
     </form>
  

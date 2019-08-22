@@ -50,6 +50,15 @@ class Matikka{
           return 'α '. $rad . '<br>';
       }
 
+      public function textValidate($data){
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+      }
+
+      
+
 
 
     }

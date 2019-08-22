@@ -1,24 +1,21 @@
 <?php 
 
 include('../Matikka.php');
-$cal = new Matikka();
+$calculation = new Matikka();
 
-$syötettyKalori = $_POST["kalori"];
+$kalori= "";
+$nameError = "";
 
-
-echo $cal->calcJouleiksi($syötettyKalori);
-
-
-
-
-
-?>
-
-<script>
- let userinput = document.querySelectAll('input')[0].value;
- if (userinput == " "){
-     alert('pls fill in the form')
- }
-
+if(isset($_POST['laske'])){
  
-</script>
+   if(empty($_POST["kalori"])){
+       $nameError = "This is required";
+   }
+   else {
+       $kalori = $_POST["kalori"];
+   }
+   
+   echo $calculation->calcJouleiksi($kalori);
+}
+ 
+?>
