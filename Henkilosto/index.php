@@ -14,7 +14,7 @@
   </head>
   <body>
   <?php include('./includes/navbar.php'); ?>
-  
+
    <?php
      include('Henkilo.php');
 
@@ -43,7 +43,7 @@
       <th scope="col">Sukunimi</th>
       <th scope="col">Osasto</th>
       <th scope="col">Palkka</th>
-      <th scope="col">Toiminnot</th>
+      <th scope="col"> Toiminnot</th>
       
     </tr>
   </thead>
@@ -60,7 +60,8 @@
       <td><?php echo $henkilo['sukunimi'] ?></td>
       <td><?php echo $henkilo['osasto'] ?></td>
       <td><?php echo $henkilo['palkka'] ?></td>
-      <td>panikkeet</td>
+      <!-- <td>panikkeet</td> -->
+      <td> <button type="submit">Edit</button></td>
     </tr> 
     <?php
     }
