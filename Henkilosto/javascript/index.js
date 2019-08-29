@@ -1,24 +1,3 @@
-// $(document).on('click', '.muuta-object', function(){
-//     var id = $(this).attr('muuta-id');
-//     bootbox.confirm({
-//         message: '<h4> Oletko varma ?</h4>',
-//         buttons:{
-//             confirm:{
-//                 label:'kyllä', className:'btn-danger'
-//             },
-//             cancel:{
-//                 label: 'En', className: 'btn-primary'
-//             }
-//         },
-//         callback: function(result){
-//             if(result == true){
-//                 var url= "muutaHenkilo.php?id=" + id;
-//                 $(location).attr('href', url);
-//             }
-//         }
-//     })
-// })
-
 
 // Siirry muuta-sivulle
 $(document).on('click', '.muuta-object', function() {

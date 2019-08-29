@@ -17,11 +17,17 @@ text-decoration: none;
     color: crimson;
 }
 
+/* title */
+
+.d-flex {
+  padding-left: 0;
+}
+
 /* container */
 
 .containerContent{
    
-    margin-top: 30px;
+    margin-top: 50px;
 
 }
 

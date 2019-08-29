@@ -62,11 +62,11 @@
     <div class="col-md-6">
       <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-primary"><?php echo $id ?></strong>
-          <h1 class="card-text mb-auto"><?php echo $linkki['avainsana'] ?>.</h1>
-          <h3 class="mb-0"><?php echo $linkki['kuvaus'] ?></h3>
-          <h3 class="mb-0"><?php echo $linkki['otsikko'] ?></h3>
-          <h3 class="mb-0"><?php echo $linkki['linkki'] ?></h3>
+          <strong class="d-inline-block mb-2 text-primary">ID:<?php echo $id ?></strong>
+          <h1 class="card-text mb-auto"><?php echo $linkki['avainsana'] ?></h1>
+          <h3 class="mb-0">Kuvaus :<?php echo $linkki['kuvaus'] ?></h3>
+          <h3 class="mb-0">Otsikko :<?php echo $linkki['otsikko'] ?></h3>
+          <h3 class="mb-0">Linkki :<?php echo $linkki['linkki'] ?></h3>
           <h3 class="mb-0"><?php echo "Data fetched " . date("h:i:sa")?>;</h3>
           <div class="mb-1 text-muted"></div>
            <button muuta-id="<?php echo $id ?>" class="btn btn-primary muuta-object" type="submit">Edit</button>
