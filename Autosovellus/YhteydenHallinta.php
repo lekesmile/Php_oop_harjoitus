@@ -56,38 +56,13 @@ class YhteydenHallinta{
 
         // haetaan tulostaulukko ja suljetaan yhteys
         $tulosjoukko = $suoritettavaLause->fetchAll(PDO::FETCH_ASSOC);
-
+        //    print_r($tulosjoukko);   
         // Suljetaan yhteys
         $this->suljeYhteys();
 
         // Palautetaan tulosjoukko
         return $tulosjoukko;
 
-    }
-
-    // Metodia kutsutaan kun suoritetaan lisäys(insert), poisto(delect) tai päivitys(update)
-
-    public function suoritaPaivitysLause($sqlLause, $parametritaulukko = Array()){
-        $this->avaaYhteys();
-
-        try {
-            // Valmistellaa SQL-Lause
-            $suoritettavaLause = $this->yhteys->prepare($sqlLause);
-            // Suoritetaan sql lause palvelimella
-            $suoritettavaLause->execute($parametritaulukko);
-           // Palautta tietueiden määrän(0-ei tietuetta)
-           $lkm = $suoritettavaLause->rowCount();
-
-           // Suljetaan yhteys
-        $this->suljeYhteys();
-
-        } catch (PDOException $e) {
-            // Jos tuli virhe asetaan tietueiden mää nollaksi
-            $lkm= 0;
-            
-        }
-        
-        return $lkm;
     }
 
     private function suljeYhteys(){

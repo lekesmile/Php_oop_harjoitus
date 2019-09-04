@@ -62,6 +62,13 @@ class Henkilo{
         return $this->yhteydenhallinta->suoritaHakuLause("select * from henkilosto");
     }
 
+    public function lisaaHenkilo(){
+        return $this->yhteydenhallinta->suoritaPaivitysLause("
+           insert into henkilosto(henkilonumero, etunimi, sukunimi, osasto, palkka) 
+           values(?,?,?,?,?)" ,
+        Array($this->henkilonumero, $this->etunimi, $this->sukunimi, $this->osasto, $this->palkka));
+    }
+
 }
 
 
