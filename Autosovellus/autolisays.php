@@ -18,9 +18,17 @@ $henkilo->luoYhteysTietokantaan();
 
 $lisayOk = $henkilo->lisaaauto();
 
+
+$successMessage = "Lisäys onnistui";
+$errorMessage =  "Lisäys ei onnistui";
+$redirect = header('Location: index.php');
+
+
 if($lisayOk > 0){
-    echo "Lisäys onnistui";
+    echo "<script type='text/javascript'>alert('$successMessage');</script>";
+    echo "<script type='text/javascript'>setTimeout('$redirect, 5000');</script>";
+    
 }else{
-    echo "Lisäys ei onnistui";
+    echo "<script type='text/javascript'>alert('$errorMessage');</script>";
 }
 ?>
