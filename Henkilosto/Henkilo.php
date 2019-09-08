@@ -69,6 +69,15 @@ class Henkilo{
         Array($this->henkilonumero, $this->etunimi, $this->sukunimi, $this->osasto, $this->palkka));
     }
 
+    public function poistaHenkilo(){
+        return $this->yhteydenhallinta->suoritaPaivitysLause("delete from henkilosto where henkilonumero=". $_GET['id']);
+    }
+
+    public function muuutaHenkilo(){
+        return $this->yhteydenhallinta->suoritaPaivitysLause("update henkilosto set henkilonumero, etunimi, sukunimi, osasto, palkka where henkilonumero=". $_GET['id'],
+        Array($this->henkilonumero, $this->etunimi, $this->sukunimi, $this->osasto, $this->palkka));
+    }
+
 }
 
 

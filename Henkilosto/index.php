@@ -25,7 +25,7 @@
 
 
     //  henkilo.oliota hakemaan kaikki kenkilot tietikannasta
-      $henkilot= $henkilo->haeKaikkiHenkilot() ;
+      $henkilot= $henkilo->haeKaikkiHenkilot();
 
      ?>
 

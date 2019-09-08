@@ -90,6 +90,8 @@ class Autot{
         Array( $this->rekisterinumero, $this->merkki, $this->valmistusvuosi, $this->malli));
     }
 
+   
+
   
 }
 
