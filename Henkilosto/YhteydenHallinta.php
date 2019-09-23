@@ -90,34 +90,7 @@ class YhteydenHallinta{
         return $lkm;
     }
    
-     // Poista Henkilo
-
-    //  public function suoritapoistoon(){
-    //     $this->avaaYhteys();
-
-    //     try {
-            
-    //         // Valmistellaa SQL-Lause
-    //         $suoritettavaLause = $this->yhteys->prepare($sqlLause);
-    //         // Suoritetaan sql lause palvelimella
-    //         $suoritettavaLause->execute(array($_GET['id']));
-    //        // Palautta tietueiden määrän(0-ei tietuetta)
-    //        $delect = $suoritettavaLause->fetchAll();
-
-    //            // Suljetaan yhteys
-    //     $this->suljeYhteys();
-    //     } catch (PDOException $e) {
-    //         // Jos tuli virhe asetaan tietueiden mää nollaksi
-    //         $delect= 0;
-    //     }
-
-    //     return $delect;
-   
-    //  }
-
-
-
-
+    
 
     private function suljeYhteys(){
         $this->yhteys = null;

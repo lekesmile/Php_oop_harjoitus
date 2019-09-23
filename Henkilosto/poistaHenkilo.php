@@ -12,10 +12,13 @@ $henkilo->getHenkilonumero($_GET['id']);
 $delect =  $henkilo->poistaHenkilo();
 
    if (delect == true) {
-      echo 'Henkilo poistettu, id numero' . $_GET['id'];
+     
+    echo 'Henkilo poistettu, id numero' . $_GET['id'];
+    header('refresh:2; url=index.php');
    }
    else {
        echo 'Henkilo poistaminen ongelma';
+       header('refresh:5; url=index.php');
    }
 
 ?>

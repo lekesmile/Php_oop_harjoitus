@@ -78,6 +78,10 @@ class Henkilo{
         Array($this->henkilonumero, $this->etunimi, $this->sukunimi, $this->osasto, $this->palkka));
     }
 
+    public function haehenkilo(){
+        return $this->yhteydenhallinta->suoritaHakuLause("select * from henkilosto WHERE etunimi LIKE ");
+    }
+
 }
 
 

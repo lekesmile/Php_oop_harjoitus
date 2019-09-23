@@ -24,6 +24,8 @@ $(document).on('click', '.muuta-object', function() {
       }
     })
   })
+
+  
   // Siirry poista-sivulle
   $(document).on('click', '.poista-object', function() {
     var id = $(this).attr('poista-id');

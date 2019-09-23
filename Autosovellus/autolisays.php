@@ -21,12 +21,12 @@ $lisayOk = $henkilo->lisaaauto();
 
 $successMessage = "Lisäys onnistui";
 $errorMessage =  "Lisäys ei onnistui";
-$redirect = header('Location: index.php');
 
 
 if($lisayOk > 0){
     echo "<script type='text/javascript'>alert('$successMessage');</script>";
-    echo "<script type='text/javascript'>setTimeout('$redirect, 5000');</script>";
+     header('refresh:2; url=index.php');
+
     
 }else{
     echo "<script type='text/javascript'>alert('$errorMessage');</script>";

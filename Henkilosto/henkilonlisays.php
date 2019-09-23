@@ -20,6 +20,7 @@ $lisayOk = $henkilo->lisaaHenkilo();
 
 if($lisayOk > 0){
     echo "Lisäys onnistui";
+    header('refresh:2; url=index.php');
 }else{
     echo "Lisäys ei onnistui";
 }
