@@ -63,23 +63,22 @@ class Henkilo{
     }
 
     public function lisaaHenkilo(){
-        return $this->yhteydenhallinta->suoritaPaivitysLause("
-           insert into henkilosto(henkilonumero, etunimi, sukunimi, osasto, palkka) 
-           values(?,?,?,?,?)" ,
+        return $this->yhteydenhallinta->suoritaPaivitysLause("INSERT INTO henkilosto(henkilonumero, etunimi, sukunimi, osasto, palkka) 
+           VALUES(?,?,?,?,?)" ,
         Array($this->henkilonumero, $this->etunimi, $this->sukunimi, $this->osasto, $this->palkka));
     }
 
     public function poistaHenkilo(){
-        return $this->yhteydenhallinta->suoritaPaivitysLause("delete from henkilosto where henkilonumero=". $_GET['id']);
+        return $this->yhteydenhallinta->suoritaPaivitysLause("DELETE FROM henkilosto WHERE henkilonumero=". $_GET['id']);
     }
 
-    public function muuutaHenkilo(){
-        return $this->yhteydenhallinta->suoritaPaivitysLause("update henkilosto set henkilonumero, etunimi, sukunimi, osasto, palkka where henkilonumero=". $_GET['id'],
-        Array($this->henkilonumero, $this->etunimi, $this->sukunimi, $this->osasto, $this->palkka));
+    public function muutaVainHenkilo(){
+        return $this->yhteydenhallinta->suoritaPaivitysLause("UPDATE henkilosto SET etunimi=?, sukunimi=?, osasto=?, palkka=? WHERE henkilonumero=?",
+        Array($this->etunimi, $this->sukunimi, $this->osasto, $this->palkka, $this->henkilonumero));
     }
 
     public function haehenkilo(){
-        return $this->yhteydenhallinta->suoritaHakuLause("select * from henkilosto WHERE etunimi LIKE ");
+        return $this->yhteydenhallinta->suoritaHakuLause("SELECT * FROM henkilosto WHERE sukunimi LIKE ?");
     }
 
 }

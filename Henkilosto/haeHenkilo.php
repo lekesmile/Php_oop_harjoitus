@@ -18,7 +18,19 @@
 <?php include('./includes/navbar.php');
 
 if(isset($_POST['search'])){
-   
+   // Referensi Henkilo-olioon
+   require 'Henkilo.php';
+
+   // Luodaan henkilo-olio
+   $henkilo = new Henkilo();
+
+   // Pyydetään henkilo-oliota ottamaan yhteys tietokantaan
+   $henkilo->luoYhteysTietokantaan();
+
+   // Haetaan tietyn henkilön tiedot taulukkoon
+   //$sukunimi = 'Puro';
+   $sukunimi = $_POST['sukunimi'];
+   $henkilot = $henkilo->haeSukunimella($sukunimi);
 }
 
 ?>
@@ -31,6 +43,39 @@ if(isset($_POST['search'])){
 <input type="text" name="search" placeholder="Hae Henkilo">
 <input type="submit" value="search" name="search">
 </form>
+
+<table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>etunimi</th>
+                <th>sukunimi</th>
+                <th>osasto</th>
+                <th>palkka</th>
+                <th>Toiminnot</th>
+            </tr>
+        </thead>
+    <?php
+    // Tulostetaan kaikki henkilöt
+    foreach ($henkilot as $henkilo) {
+        $id = $henkilo['henkilonumero'];
+        ?>
+        <tr>
+            <td><?php echo $henkilo['henkilonumero'] ?></td>
+            <td><?php echo $henkilo['etunimi'] ?></td>
+            <td><?php echo $henkilo['sukunimi'] ?></td>
+            <td><?php echo $henkilo['osasto'] ?></td>
+            <td><?php echo $henkilo['palkka'] ?></td>
+            <td>
+                <button muuta-id="<?php echo $id ?>" class="btn btn-primary  muuta-object">Muuta</button>
+                <a href='poistaHenkilo.php?id=<?php echo $id ?>' 
+                class="btn btn-danger" role="button">Poista</a>
+            </td>
+        </tr>
+        <?php
+    }
+    ?>
+</table>
 </div>
 
 <?php include('./includes/footer.php');?>

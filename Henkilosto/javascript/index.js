@@ -18,7 +18,7 @@ $(document).on('click', '.muuta-object', function() {
         // Painettiinko Kyllä-painiketta?
         if(result == true) {
           // Kyllä painettiin, joten siirrytään muuta-sivulle
-          var url = "muutaHenkilo.php?id=" + id;
+          var url = "muutaHenkiloSyotto.php?id=" + id;
           $(location).attr('href', url);
         }
       }
