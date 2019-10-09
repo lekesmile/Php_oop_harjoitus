@@ -69,7 +69,7 @@ class YhteydenHallinta{
 
     public function suoritaPaivitysLause($sqlLause, $parametritaulukko = Array()){
         $this->avaaYhteys();
-        print_r ($parametritaulukko);
+        // print_r ($parametritaulukko);
 
         try {
             // Valmistellaa SQL-Lause
